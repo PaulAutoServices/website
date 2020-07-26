@@ -1,14 +1,8 @@
-let cards = document.querySelectorAll(".uk-card");
-for (let card of cards) {
-	card.addEventListener("mouseleave", () => {
-		card.classList.add("uk-card-default");
-		card.classList.remove("uk-card-secondary");
-	});
-	card.addEventListener("mouseenter", ()=> {
-		card.classList.add("uk-card-secondary");
-		card.classList.remove("uk-card-default");
-	});
-}
+let oneTimeServices = document.getElementById("one-time-services")
+oneTimeServices.appendChild(createCard("Service 1"));
+oneTimeServices.appendChild(createCard("Service 2"));
+oneTimeServices.appendChild(createCard("Service 3"));
+oneTimeServices.appendChild(createCard("Service 4"));
 
 function createCard(title, subtitle, pricing, imgurl) {
 	let wrapper = document.createElement("div");
