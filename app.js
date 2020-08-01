@@ -1,9 +1,26 @@
-let oneTimeServices = document.getElementById("one-time-services")
-oneTimeServices.appendChild(createCard("Service 1"));
-oneTimeServices.appendChild(createCard("Service 2"));
-oneTimeServices.appendChild(createCard("Service 3"));
-oneTimeServices.appendChild(createCard("Service 4"));
+let global = {
+	packages: [
+			{name: "Package 1"},
+			{name: "Package 2"},
+			{name: "Package 3"},
+			{name: "Package 4"}
+	],
+		services: [
+				{name: "Service 1"},
+				{name: "Service 2"},
+				{name: "Service 3"},
+				{name: "Service 4"}
+		]
+}
 
+let oneTimeServices = document.getElementById("one-time-services")
+for (let service of global.services) {
+	oneTimeServices.appendChild(createCard(service.name));
+}
+let packages = document.getElementById("packages");
+for (let package of global.packages) {
+	packages.appendChild(createCard(package.name));
+}
 function createCard(title, subtitle, pricing, imgurl) {
 	let wrapper = document.createElement("div");
 	let card = document.createElement("div")
@@ -12,8 +29,9 @@ function createCard(title, subtitle, pricing, imgurl) {
 	let img = document.createElement("img");
 		img.setAttribute("width", "500")
 		img.setAttribute("height", "500")
-		img.setAttribute("data-src", imgurl)
+		img.setAttribute("data-src", "./assets/image-placeholder-500x500.jpg")
 		img.setAttribute("uk-img", "")
+		img.classList.add("card-img")
 	imgDiv.classList.add("uk-card-media-top");
 		imgDiv.appendChild(img)
 	let cardBody = document.createElement("div")

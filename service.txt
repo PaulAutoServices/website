@@ -1,0 +1,6 @@
+1. Interior - 1000, 1250, 1500, 1500 
+2. Exterior - 400, 500, 600, 700
+4. Teflon Coating - 2500, 3000, 3500, 3600
+5. Full Service - 3300, 4000, 4700, 5000 
+6. Seats - 200(Resin),230(Cloth)/seat
+7. 
