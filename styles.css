@@ -1,3 +1,7 @@
+@font-face {
+	font-family: myCursive;
+	src: url(./assets/fonts/static/DancingScript-Regular.ttf);
+}
 .uk-card-default {
 	-webkit-transition: all 1.7s ease;
 	transition: all 0.5s ease;
@@ -6,6 +10,11 @@
 .uk-card-secondary {
 	-webkit-transition: all 1.7s ease;
 	transition: all 0.5s ease;
+}
+
+.uk-heading-line {
+	font-family: myCursive;
+	font-size: 80px;
 }
 
 .uk-card {
@@ -21,8 +30,8 @@
 }
 
 .break {
-	box-shadow: 0 5px 15px rgba(0,0,0,.08);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 	width: 50%;
 	margin: 70px auto;
-	border: 1px solid rgba(0,0,0,.08);
+	border: 1px solid rgba(0, 0, 0, 0.08);
 }
