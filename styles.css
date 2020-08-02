@@ -1,13 +1,9 @@
 .uk-card-default {
-	background-image: url(/assets/card-background-light.svg);
-	background-repeat: no-repeat;
 	-webkit-transition: all 1.7s ease;
 	transition: all 0.5s ease;
 }
 
 .uk-card-secondary {
-	background-image: url(/assets/card-background-dark.svg);
-	background-repeat: no-repeat;
 	-webkit-transition: all 1.7s ease;
 	transition: all 0.5s ease;
 }
