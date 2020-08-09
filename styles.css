@@ -1,6 +1,13 @@
+body {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
 @font-face {
 	font-family: myCursive;
 	src: url(./assets/fonts/static/DancingScript-Regular.ttf);
+}
+@font-face {
+	font-family: arvoBold;
+	src: url(./assets/fonts/static/Arvo-Bold.ttf);
 }
 .uk-card-default {
 	-webkit-transition: all 1.7s ease;
@@ -14,6 +21,21 @@
 
 .uk-heading-line {
 	font-family: myCursive;
+}
+
+.uk-heading-large,
+.centered-heading-small,
+.centered-heading-large,
+.uk-heading-small {
+	font-family: arvoBold;
+}
+
+.centered-heading-small {
+	font-size: 20px;
+}
+
+.centered-heading-large {
+	font-size: 40px;
 }
 
 .uk-card {

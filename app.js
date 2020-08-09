@@ -3,13 +3,11 @@ let global = {
 		{ name: "Package 1" },
 		{ name: "Package 2" },
 		{ name: "Package 3" },
-		{ name: "Package 4" }
 	],
 	services: [
-		{ name: "Service 1" },
-		{ name: "Service 2" },
-		{ name: "Service 3" },
-		{ name: "Service 4" }
+		{ name: "Interior" },
+		{ name: "Exterior" },
+		{ name: "Teflon Coating" },
 	],
 	testimonies: [
 		{
@@ -27,7 +25,7 @@ let global = {
 	]
 };
 
-let oneTimeServices = document.getElementById("one-time-services");
+let oneTimeServices = document.getElementById("services");
 for (let service of global.services) {
 	oneTimeServices.appendChild(createCard(service.name));
 }
