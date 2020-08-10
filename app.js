@@ -1,13 +1,40 @@
 let global = {
 	packages: [
-		{ name: "Package 1" },
-		{ name: "Package 2" },
-		{ name: "Package 3" },
+		{
+			name: "Hatchback",
+			desc:
+				"This is a description of the pack and what it is for. It can also cover how to use the pack.",
+			cost: 500,
+			options: [
+				"Vacuum + Door Panel + Dashboard",
+				"Vacuum + Door Panel + Trunk + Roof"
+			]
+		},
+		{
+			name: "Sedan",
+			desc:
+				"This is a description of the pack and what it is for. It can also cover how to use the pack.",
+			cost: 600,
+			options: [
+				"Vacuum + Door Panel + Dashboard + Roof",
+				"Vacuum + Door Panel + Trunk + Roof"
+			]
+		},
+		{
+			name: "SUV & Luxury",
+			desc:
+				"This is a description of the pack and what it is for. It can also cover how to use the pack.",
+			cost: 800,
+			options: [
+				"Vacuum + Door Panel + Dashboard + Roof",
+				"Vacuum + Door Panel + Trunk + Roof"
+			]
+		}
 	],
 	services: [
 		{ name: "Interior" },
 		{ name: "Exterior" },
-		{ name: "Teflon Coating" },
+		{ name: "Teflon Coating" }
 	],
 	testimonies: [
 		{
@@ -25,13 +52,9 @@ let global = {
 	]
 };
 
-let oneTimeServices = document.getElementById("services");
-for (let service of global.services) {
-	oneTimeServices.appendChild(createCard(service.name));
-}
 let packages = document.getElementById("packages");
 for (let package of global.packages) {
-	packages.appendChild(createCard(package.name));
+	packages.appendChild(createFlatCard(package));
 }
 let testimonyDiv = document.getElementById("testimonies");
 for (let testimony of global.testimonies) {
@@ -74,6 +97,43 @@ function createCard(title, subtitle, pricing, imgurl) {
 		card.classList.add("uk-card-secondary");
 		card.classList.remove("uk-card-default");
 	});
+	wrapper.appendChild(card);
+	return wrapper;
+}
+
+function createFlatCard(obj) {
+	let wrapper = document.createElement("div");
+	let card = document.createElement("div");
+	card.classList.add("sw-flat-card", "uk-width-medium", "uk-dark");
+	card.style.marginTop = "30px";
+	let title = document.createElement("div");
+	title.appendChild(document.createTextNode(obj.name));
+	title.classList.add("sw-heading-large");
+	card.appendChild(title);
+	let desc = document.createElement("div");
+	desc.appendChild(document.createTextNode(obj.desc));
+	desc.classList.add("custom-text");
+	card.appendChild(desc);
+	let imgDiv = document.createElement("div");
+	imgDiv.classList.add("uk-card-media-top");
+		imgDiv.style.marginTop = "20px";
+	let img = createImg("500", "500");
+	imgDiv.appendChild(img);
+	img.classList.add("card-img");
+	let h3 = document.createElement("div");
+	h3.classList.add("sw-heading-large");
+	let titleText = document.createTextNode("\u20B9\u0020" + obj.cost);
+	h3.appendChild(titleText);
+	let pack1 = document.createElement("div");
+		pack1.appendChild(document.createTextNode(obj.options[0]));
+		pack1.classList.add("uk-width-1-1", "uk-button", "uk-button-secondary");
+	let pack2 = document.createElement("div");
+		pack2.appendChild(document.createTextNode(obj.options[1]));
+		pack2.classList.add("uk-width-1-1", "uk-button", "uk-button-default");
+	card.appendChild(imgDiv);
+	card.appendChild(h3);
+	card.appendChild(pack1);
+	card.appendChild(pack2);
 	wrapper.appendChild(card);
 	return wrapper;
 }

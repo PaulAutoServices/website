@@ -9,9 +9,16 @@ body {
 	font-family: arvoBold;
 	src: url(./assets/fonts/static/Arvo-Bold.ttf);
 }
+@media only screen and (max-width: 600px) {
+}
 .uk-card-default {
 	-webkit-transition: all 1.7s ease;
 	transition: all 0.5s ease;
+}
+
+.custom-text {
+	font-family: arvoBold;
+	font-size: 1rem;
 }
 
 .uk-card-secondary {
@@ -30,12 +37,31 @@ body {
 	font-family: arvoBold;
 }
 
+.uk-list-inline > li {
+	list-style: none;
+	display: inline-block;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
 .centered-heading-small {
-	font-size: 20px;
+	font-size: 1rem;
 }
 
 .centered-heading-large {
-	font-size: 40px;
+	font-size: 2rem;
+}
+
+.sw-heading-small {
+	font-size: 1rem;
+}
+
+.sw-heading-large {
+	font-size: 2rem;
+}
+
+.sw-flat-card > div {
+	margin-top: 10px;
 }
 
 .uk-card {
@@ -43,16 +69,9 @@ body {
 	margin-top: 30px;
 	border-radius: 10%;
 }
-
-.card-img {
-	opacity: 0.5;
-	border-top-left-radius: 10%;
-	border-top-right-radius: 10%;
-}
-
 .break {
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-	width: 50%;
-	margin: 70px auto;
-	border: 1px solid rgba(0, 0, 0, 0.08);
+	width: 80px;
+	margin: 20px auto;
+	border: 1px solid rgba(0, 0, 0, 0.5);
 }
