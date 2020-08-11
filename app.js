@@ -5,6 +5,7 @@ let global = {
 			desc:
 				"This is a description of the pack and what it is for. It can also cover how to use the pack.",
 			cost: 500,
+			img: "./assets/hatchback.jpg",
 			options: [
 				"Vacuum + Door Panel + Dashboard",
 				"Vacuum + Door Panel + Trunk + Roof"
@@ -15,6 +16,7 @@ let global = {
 			desc:
 				"This is a description of the pack and what it is for. It can also cover how to use the pack.",
 			cost: 600,
+			img: "./assets/sedan.jpg",
 			options: [
 				"Vacuum + Door Panel + Dashboard + Roof",
 				"Vacuum + Door Panel + Trunk + Roof"
@@ -25,6 +27,7 @@ let global = {
 			desc:
 				"This is a description of the pack and what it is for. It can also cover how to use the pack.",
 			cost: 800,
+			img: "./assets/luxury.jpg",
 			options: [
 				"Vacuum + Door Panel + Dashboard + Roof",
 				"Vacuum + Door Panel + Trunk + Roof"
@@ -116,8 +119,8 @@ function createFlatCard(obj) {
 	card.appendChild(desc);
 	let imgDiv = document.createElement("div");
 	imgDiv.classList.add("uk-card-media-top");
-		imgDiv.style.marginTop = "20px";
-	let img = createImg("500", "500");
+	imgDiv.style.marginTop = "20px";
+	let img = createImg("500", "500", obj.img);
 	imgDiv.appendChild(img);
 	img.classList.add("card-img");
 	let h3 = document.createElement("div");
@@ -125,11 +128,11 @@ function createFlatCard(obj) {
 	let titleText = document.createTextNode("\u20B9\u0020" + obj.cost);
 	h3.appendChild(titleText);
 	let pack1 = document.createElement("div");
-		pack1.appendChild(document.createTextNode(obj.options[0]));
-		pack1.classList.add("uk-width-1-1", "uk-button", "uk-button-secondary");
+	pack1.appendChild(document.createTextNode(obj.options[0]));
+	pack1.classList.add("uk-width-1-1", "uk-button", "uk-button-secondary");
 	let pack2 = document.createElement("div");
-		pack2.appendChild(document.createTextNode(obj.options[1]));
-		pack2.classList.add("uk-width-1-1", "uk-button", "uk-button-default");
+	pack2.appendChild(document.createTextNode(obj.options[1]));
+	pack2.classList.add("uk-width-1-1", "uk-button", "uk-button-default");
 	card.appendChild(imgDiv);
 	card.appendChild(h3);
 	card.appendChild(pack1);
@@ -138,11 +141,12 @@ function createFlatCard(obj) {
 	return wrapper;
 }
 
-function createImg(width, height) {
+function createImg(width, height, src) {
+		src = src || "./assets/image-placeholder-500x500.jpg";
 	let img = document.createElement("img");
 	img.setAttribute("width", width);
 	img.setAttribute("height", height);
-	img.setAttribute("data-src", "./assets/image-placeholder-500x500.jpg");
+	img.setAttribute("data-src", src);
 	img.setAttribute("uk-img", "");
 	return img;
 }
