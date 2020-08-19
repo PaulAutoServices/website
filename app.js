@@ -107,7 +107,7 @@ function createCard(title, subtitle, pricing, imgurl) {
 function createFlatCard(obj) {
 	let wrapper = document.createElement("div");
 	let card = document.createElement("div");
-	card.classList.add("sw-flat-card", "uk-width-medium", "uk-dark");
+	card.classList.add("sw-flat-card", "uk-text-center", "uk-width-medium", "uk-dark");
 	card.style.marginTop = "30px";
 	let title = document.createElement("div");
 	title.appendChild(document.createTextNode(obj.name));
@@ -120,9 +120,10 @@ function createFlatCard(obj) {
 	let imgDiv = document.createElement("div");
 	imgDiv.classList.add("uk-card-media-top");
 	imgDiv.style.marginTop = "20px";
-	let img = createImg("500", "500", obj.img);
+	let img = createImg("500", "200", obj.img);
 	imgDiv.appendChild(img);
 	img.classList.add("card-img");
+	img.setAttribute("uk-scrollspy", "cls:uk-animation-fade; delay: 100");
 	let h3 = document.createElement("div");
 	h3.classList.add("sw-heading-large");
 	let titleText = document.createTextNode("\u20B9\u0020" + obj.cost);
@@ -146,6 +147,7 @@ function createImg(width, height, src) {
 	let img = document.createElement("img");
 	img.setAttribute("width", width);
 	img.setAttribute("height", height);
+	img.style.height = height + "px";
 	img.setAttribute("data-src", src);
 	img.setAttribute("uk-img", "");
 	return img;
@@ -155,7 +157,7 @@ function createTestimony(source, citeLink, content, image) {
 	let li = document.createElement("li");
 	let testimonyDiv = document.createElement("div");
 	testimonyDiv.style.padding = "0 10%";
-	let img = createImg("225", "150");
+	let img = createImg("225", "300");
 	img.classList.add("uk-align-left", "uk-margin-remove-adjacent");
 	let blockquote = document.createElement("blockquote");
 	blockquote.classList.add("uk-text-middle");
