@@ -30,18 +30,31 @@
 	<body>
 		<div uk-sticky>
 			<nav class="uk-background-secondary uk-light" uk-navbar>
+				<div class="uk-navbar-left">
+					<ul class="uk-navbar-nav">
+						<li style>
+							<img
+								data-src="./assets/logo.png"
+								width="100"
+								height="100"
+								alt=""
+								uk-img
+							/>
+						</li>
+					</ul>
+				</div>
 				<div class="uk-navbar-right">
 					<ul class="uk-navbar-nav">
 						<li class="uk-active">
 							<a href="#">Home</a>
 						</li>
-						<li><a href="#">About</a></li>
 						<li>
-							<a href="./pricing.html"
-								>Pricing</a
+							<a
+								href="./about-us.html"
+								>About</a
 							>
 						</li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="./contact.html">Contact</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -136,7 +149,7 @@
 					<div>
 						<div class="uk-text-center">
 							<img
-								src="./assets/seats.svg" 
+								src="./assets/seats.svg"
 							/>
 						</div>
 						<div
@@ -153,7 +166,7 @@
 					<div>
 						<div class="uk-text-center">
 							<img
-								src="./assets/clean-car.svg" 
+								src="./assets/clean-car.svg"
 							/>
 						</div>
 						<div
@@ -170,7 +183,7 @@
 					<div>
 						<div class="uk-text-center">
 							<img
-								src="./assets/roller.svg" 
+								src="./assets/roller.svg"
 							/>
 						</div>
 						<div
@@ -197,7 +210,10 @@
 		</div>
 		<div class="uk-section">
 			<div class="uk-container sw-container-full-img">
-				<div uk-grid>
+				<div
+					uk-grid
+					class="uk-flex-center uk-grid-medium uk-grid"
+				>
 					<div>
 						<img
 							data-src="assets/pexels-albin-berlin-919073.jpg"
