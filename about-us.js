@@ -48,6 +48,7 @@ function createRatingCard(obj) {
 		star_img.setAttribute("src", "./assets/star.svg");
 		star_img.setAttribute("width", "30px");
 		star_img.style.paddingRight = "10px";
+			star_img.setAttribute("uk-scrollspy", "cls: uk-animation-scale-down; delay: " + i * 100);
 		star.appendChild(star_img);
 		stars.appendChild(star);
 	}
