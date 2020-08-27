@@ -1,3 +1,10 @@
+class Link {
+	constructor(url, text, isActive) {
+		this.url = url;
+		this.text = text;
+		this.isActive = isActive;
+	}
+}
 let global = {
 	navbar: {
 		logo: "./assets/logo.png",
@@ -64,14 +71,6 @@ let global = {
 		}
 	]
 };
-
-class Link {
-	constructor(url, text, isActive) {
-		this.url = url;
-		this.text = text;
-		this.isActive = isActive;
-	}
-}
 
 let packages = document.getElementById("packages");
 for (let package of global.packages) {
