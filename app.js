@@ -4,7 +4,8 @@ let global = {
 		rightLinks: [
 			{ url: "./index.html", text: "Home", isActive: true },
 			{ url: "./about-us.html", text: "About" }
-		]
+		],
+		leftLinks: []
 	},
 	packages: [
 		{
