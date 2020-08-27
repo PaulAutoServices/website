@@ -5,7 +5,8 @@ let global = {
 			{ url: "./index.html", text: "Home", isActive: true },
 			{ url: "./about-us.html", text: "About" }
 		],
-		leftLinks: []
+		leftLinks: [],
+		colorScheme: "dark"
 	},
 	packages: [
 		{
