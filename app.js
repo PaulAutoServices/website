@@ -69,6 +69,8 @@ for (let testimony of global.testimonies) {
 		)
 	);
 }
+let navbarDiv = document.getElementById("navbar");
+navbarDiv.appendChild(createNavbar(global.navbar));
 function createCard(title, subtitle, pricing, imgurl) {
 	let wrapper = document.createElement("div");
 	let card = document.createElement("div");
@@ -107,7 +109,12 @@ function createCard(title, subtitle, pricing, imgurl) {
 function createFlatCard(obj) {
 	let wrapper = document.createElement("div");
 	let card = document.createElement("div");
-	card.classList.add("sw-flat-card", "uk-text-center", "uk-width-medium", "uk-dark");
+	card.classList.add(
+		"sw-flat-card",
+		"uk-text-center",
+		"uk-width-medium",
+		"uk-dark"
+	);
 	card.style.marginTop = "30px";
 	let title = document.createElement("div");
 	title.appendChild(document.createTextNode(obj.name));
@@ -143,7 +150,7 @@ function createFlatCard(obj) {
 }
 
 function createImg(width, height, src) {
-		src = src || "./assets/image-placeholder-500x500.jpg";
+	src = src || "./assets/image-placeholder-500x500.jpg";
 	let img = document.createElement("img");
 	img.setAttribute("width", width);
 	img.setAttribute("height", height);
@@ -179,4 +186,46 @@ function createTestimony(source, citeLink, content, image) {
 	testimonyDiv.appendChild(blockquote);
 	li.appendChild(testimonyDiv);
 	return li;
+}
+
+function createNavLink(obj) {
+	let li = document.createElement("li");
+	if (obj.isActive) li.classList.add("uk-active");
+	let a = document.createElement("a");
+	a.setAttribute("href", obj.url || "#");
+	a.appendChild(document.createTextNode(obj.text || "Link"));
+	li.appendChild(a);
+	return li;
+}
+
+function createNavbar(obj) {
+	let wrapper = document.createElement("div");
+	let nav = document.createElement("nav");
+	nav.setAttribute("uk-navbar", "");
+	if (obj.colorScheme && obj.colorScheme == "dark") nav.classList.add("uk-background-secondary", "uk-light");
+	let left = document.createElement("div");
+	left.classList.add("uk-navbar-left");
+	let right = document.createElement("div");
+	right.classList.add("uk-navbar-right");
+	let left_ul = document.createElement("ul");
+	left_ul.classList.add("uk-navbar-nav");
+	let right_ul = documtent.createElement("ul");
+	right_ul.classList.add("uk-navbar-nav");
+	if (obj.logo) {
+		let li = document.createElement("li");
+		li.appendChild(createImg(100, 100, obj.logo));
+		left_ul.appendChild(li);
+	}
+	for (let link of obj.left_links) {
+		left_ul.appendChild(link);
+	}
+	for (let link of obj.right_links) {
+		right_ul.appendChild(link);
+	}
+	left.appendChild(left_ul);
+	right.appendChild(right_ul);
+		nav.appendChild(left);
+		nav.appendChild(right);
+		wrapper.appendChild(nav);
+		return wrapper;
 }
