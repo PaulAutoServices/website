@@ -2,8 +2,9 @@ let global = {
 	navbar: {
 		logo: "./assets/logo.png",
 		rightLinks: [
-			{ url: "./index.html", text: "Home", isActive: true },
-			{ url: "./about-us.html", text: "About" }
+			new Link("./index.html", "Home", true),
+			new Link("./about-us.html", "About", false),
+			new Link("./contact.html", "Contact", false)
 		],
 		leftLinks: [],
 		colorScheme: "dark"
@@ -63,6 +64,14 @@ let global = {
 		}
 	]
 };
+
+class Link {
+	constructor(url, text, isActive) {
+		this.url = url;
+		this.text = text;
+		this.isActive = isActive;
+	}
+}
 
 let packages = document.getElementById("packages");
 for (let package of global.packages) {
