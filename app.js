@@ -226,10 +226,10 @@ function createNavbar(obj) {
 		left_ul.appendChild(li);
 	}
 	for (let link of obj.leftLinks) {
-		left_ul.appendChild(link);
+		left_ul.appendChild(createNavLink(link));
 	}
 	for (let link of obj.rightLinks) {
-		right_ul.appendChild(link);
+		right_ul.appendChild(createNavLink(link));
 	}
 	left.appendChild(left_ul);
 	right.appendChild(right_ul);
