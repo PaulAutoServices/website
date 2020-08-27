@@ -28,52 +28,21 @@
 		<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit-icons.min.js"></script>
 	</head>
 	<body>
-		<div uk-sticky>
-			<nav class="uk-background-secondary uk-light" uk-navbar>
-				<div class="uk-navbar-left">
-					<ul class="uk-navbar-nav">
-						<li style>
-							<img
-								data-src="./assets/logo.png"
-								width="100"
-								height="100"
-								alt=""
-								uk-img
-							/>
-						</li>
-					</ul>
-				</div>
-				<div class="uk-navbar-right">
-					<ul class="uk-navbar-nav">
-						<li>
-							<a href="./index.html"
-								>Home</a
-							>
-						</li>
-						<li>
-							<a
-								href="./about-us.html"
-								>About</a
-							>
-						</li>
-						<li class="uk-active">
-							<a href="#">Contact</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</div>
+		<div uk-sticky id="navbar"></div>
 		<div class="uk-container uk-section">
 			<div
 				uk-grid
-				class="uk-flex-center uk-grid-large uk-child-width-expand@s uk-grid-match"
+				class="uk-flex-center uk-grid-large uk-child-width-expand@s"
 			>
-				<div></div>
+				<div>
+					<div id="contact-form">
+					</div>
+				</div>
 				<div>
 					<div
-						class="uk-text-center sw-heading-large"
+						class="uk-text-center sw-heading-large uk-margin-large-top"
 					>
-						Find us at
+						Follow us on
 					</div>
 					<div
 						class="uk-grid-collapse uk-child-width-1-3@s uk-text-center uk-margin-medium-top"
@@ -83,42 +52,54 @@
 							<div
 								class="uk-background-secondary uk-padding uk-light"
 							>
-								<div uk-icon="icon: twitter;ratio: 3"></div>
+								<div
+									uk-icon="icon: twitter;ratio: 3"
+								></div>
 							</div>
 						</div>
 						<div>
 							<div
 								class="uk-background-secondary uk-padding uk-light"
 							>
-								<div uk-icon="icon: facebook;ratio: 3"></div>
+								<div
+									uk-icon="icon: facebook;ratio: 3"
+								></div>
 							</div>
 						</div>
 						<div>
 							<div
 								class="uk-background-secondary uk-padding uk-light"
 							>
-								<div uk-icon="icon: instagram;ratio: 3"></div>
+								<div
+									uk-icon="icon: instagram;ratio: 3"
+								></div>
 							</div>
 						</div>
 						<div>
 							<div
 								class="uk-background-secondary uk-padding uk-light"
 							>
-								<div uk-icon="icon: linkedin;ratio: 3"></div>
+								<div
+									uk-icon="icon: linkedin;ratio: 3"
+								></div>
 							</div>
 						</div>
 						<div>
 							<div
 								class="uk-background-secondary uk-padding uk-light"
 							>
-								<div uk-icon="icon: google-plus;ratio: 3"></div>
+								<div
+									uk-icon="icon: google-plus;ratio: 3"
+								></div>
 							</div>
 						</div>
 						<div>
 							<div
 								class="uk-background-secondary uk-padding uk-light"
 							>
-								<div uk-icon="icon: youtube;ratio: 3"></div>
+								<div
+									uk-icon="icon: youtube;ratio: 3"
+								></div>
 							</div>
 						</div>
 					</div>
@@ -126,4 +107,6 @@
 			</div>
 		</div>
 	</body>
+	<script src="util.js"></script>
+	<script src="contact.js"></script>
 </html>

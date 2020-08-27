@@ -25,6 +25,19 @@ let ratings = [
 	}
 ];
 
+let navbar = {
+	logo: "./assets/logo.png",
+	rightLinks: [
+		new Link("./index.html", "Home", false),
+		new Link("./about-us.html", "About", true),
+		new Link("./contact.html", "Contact", false)
+	],
+	leftLinks: [],
+	colorScheme: "dark"
+};
+let navbarDiv = document.getElementById("navbar");
+navbarDiv.appendChild(createNavbar(navbar));
+
 let ratingsContainer = document.getElementById("ratings-container");
 for (let rating of ratings) {
 	ratingsContainer.appendChild(createRatingCard(rating));
@@ -48,7 +61,10 @@ function createRatingCard(obj) {
 		star_img.setAttribute("src", "./assets/star.svg");
 		star_img.setAttribute("width", "30px");
 		star_img.style.paddingRight = "10px";
-			star_img.setAttribute("uk-scrollspy", "cls: uk-animation-scale-down; delay: " + i * 100);
+		star_img.setAttribute(
+			"uk-scrollspy",
+			"cls: uk-animation-scale-down; delay: " + i * 100
+		);
 		star.appendChild(star_img);
 		stars.appendChild(star);
 	}
