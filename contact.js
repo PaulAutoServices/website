@@ -13,3 +13,13 @@ navbarDiv.appendChild(createNavbar(navbar));
 
 let contactForm = document.getElementById("contact-form");
 contactForm.appendChild(createContactUsForm());
+
+let contactOptions = [
+	{icon: "./assets/star.svg", title: "By Phone", desc: "+91-21323141"},
+	{icon: "./assets/star.svg", title: "By Mail", desc: "paulautoservies@outlook.com"},
+	{icon: "./assets/star.svg", title: "On Location", desc: "221B, Baker Street, London"}
+]
+let contactOptionsDiv = document.getElementById("contact-options");
+for (let option of contactOptions) {
+	contactOptionsDiv.appendChild(createIconCard(option));
+}

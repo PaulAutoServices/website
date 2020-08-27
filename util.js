@@ -229,7 +229,7 @@ function createTextAreaInput(labelText) {
 	return wrapper;
 }
 
-function createButton(label, onclick) {
+function createButton(label) {
 	let button = document.createElement("button");
 	button.classList.add("uk-button", "uk-button-default");
 	button.appendChild(document.createTextNode(label));
@@ -241,5 +241,22 @@ function createButton(label, onclick) {
 }
 
 function createNotification(msg) {
-	UIkit.notification(msg, {timeout: 400});
+	UIkit.notification(msg, { timeout: 400 });
+}
+
+function createIconCard(obj) {
+	let wrapper = document.createElement("div");
+	let div = document.createElement("div");
+	div.classList.add("uk-text-center", "uk-margin-medium-top");
+	div.appendChild(createImg(50, 50, obj.icon));
+	wrapper.appendChild(div);
+	let title = document.createElement("div");
+	title.classList.add("uk-text-center", "sw-heading-medium", "uk-margin-medium-top");
+	title.appendChild(document.createTextNode(obj.title));
+	wrapper.appendChild(title);
+	let desc = document.createElement("div");
+	desc.classList.add("uk-text-center", "custom-text", "uk-margin-small-top");
+	desc.appendChild(document.createTextNode(obj.desc));
+	wrapper.appendChild(desc);
+	return wrapper;
 }
