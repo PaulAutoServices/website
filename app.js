@@ -1,4 +1,11 @@
 let global = {
+	navbar: {
+		logo: "./assets/logo.png",
+		rightLinks: [
+			{ url: "./index.html", text: "Home", isActive: true },
+			{ url: "./about-us.html", text: "About" }
+		]
+	},
 	packages: [
 		{
 			name: "Hatchback",
@@ -202,7 +209,8 @@ function createNavbar(obj) {
 	let wrapper = document.createElement("div");
 	let nav = document.createElement("nav");
 	nav.setAttribute("uk-navbar", "");
-	if (obj.colorScheme && obj.colorScheme == "dark") nav.classList.add("uk-background-secondary", "uk-light");
+	if (obj.colorScheme && obj.colorScheme == "dark")
+		nav.classList.add("uk-background-secondary", "uk-light");
 	let left = document.createElement("div");
 	left.classList.add("uk-navbar-left");
 	let right = document.createElement("div");
@@ -216,16 +224,16 @@ function createNavbar(obj) {
 		li.appendChild(createImg(100, 100, obj.logo));
 		left_ul.appendChild(li);
 	}
-	for (let link of obj.left_links) {
+	for (let link of obj.leftLinks) {
 		left_ul.appendChild(link);
 	}
-	for (let link of obj.right_links) {
+	for (let link of obj.rightLinks) {
 		right_ul.appendChild(link);
 	}
 	left.appendChild(left_ul);
 	right.appendChild(right_ul);
-		nav.appendChild(left);
-		nav.appendChild(right);
-		wrapper.appendChild(nav);
-		return wrapper;
+	nav.appendChild(left);
+	nav.appendChild(right);
+	wrapper.appendChild(nav);
+	return wrapper;
 }
