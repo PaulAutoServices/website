@@ -217,7 +217,7 @@ function createNavbar(obj) {
 	right.classList.add("uk-navbar-right");
 	let left_ul = document.createElement("ul");
 	left_ul.classList.add("uk-navbar-nav");
-	let right_ul = documtent.createElement("ul");
+	let right_ul = document.createElement("ul");
 	right_ul.classList.add("uk-navbar-nav");
 	if (obj.logo) {
 		let li = document.createElement("li");
