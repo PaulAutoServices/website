@@ -9,7 +9,15 @@ body {
 	font-family: arvoBold;
 	src: url(./assets/fonts/static/Arvo-Bold.ttf);
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 1200px) {
+	#why {
+		background: url("./assets/plant-back.jpg");
+	}
+}
+@media only screen and (max-width: 1200px) {
+	#why {
+		background: rgba(200, 208, 205, 0.3);
+	}
 }
 .uk-card-default {
 	-webkit-transition: all 1.7s ease;
