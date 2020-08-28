@@ -48,7 +48,6 @@ function createFlatCard(obj) {
 	card.classList.add(
 		"sw-flat-card",
 		"uk-text-center",
-		"uk-width-medium",
 		"uk-dark"
 	);
 	card.style.marginTop = "30px";
